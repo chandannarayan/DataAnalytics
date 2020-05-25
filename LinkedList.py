@@ -67,7 +67,7 @@ class LinkedList:
             current=current.get_next()
 			
 	def delete_head(self):
-        current = self.head
+		current = self.head
 		if current != None:
 			self.head=current.get_next()
 		return current
