@@ -50,6 +50,9 @@ class LinkedList:
 
     def delete(self, data):
         current = self.head
+        if current is None:
+          print("Empty List")
+          return
         previous = None
         found = False
         while current and found is False:
@@ -59,12 +62,14 @@ class LinkedList:
                 previous = current
                 current = current.get_next()
         if current is None:
-            raise ValueError("Data not in list")
+            print("Data not in list")
+            return
         if previous is None:
-            self.head = current.get_next()
+          self.head = current.get_next()
+          del current
         else:
-            previous.set_next(current.get_next())
-            current=current.get_next()
+          previous.set_next(current.get_next())
+          del current
     def delete_head(self):
       current = self.head
       if current != None:
